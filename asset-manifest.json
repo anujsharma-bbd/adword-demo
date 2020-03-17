@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/addword-demo/static/css/main.5f361e03.chunk.css",
-    "main.js": "/addword-demo/static/js/main.eb7aaaa6.chunk.js",
-    "main.js.map": "/addword-demo/static/js/main.eb7aaaa6.chunk.js.map",
-    "runtime-main.js": "/addword-demo/static/js/runtime-main.795d3251.js",
-    "runtime-main.js.map": "/addword-demo/static/js/runtime-main.795d3251.js.map",
-    "static/js/2.81e7840b.chunk.js": "/addword-demo/static/js/2.81e7840b.chunk.js",
-    "static/js/2.81e7840b.chunk.js.map": "/addword-demo/static/js/2.81e7840b.chunk.js.map",
-    "index.html": "/addword-demo/index.html",
-    "precache-manifest.1461eb188628a12c3434ae96febd7b65.js": "/addword-demo/precache-manifest.1461eb188628a12c3434ae96febd7b65.js",
-    "service-worker.js": "/addword-demo/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/addword-demo/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.81e7840b.chunk.js.LICENSE.txt": "/addword-demo/static/js/2.81e7840b.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/addword-demo/static/media/logo.5d5d9eef.svg"
+    "main.css": "/adword-demo/static/css/main.5f361e03.chunk.css",
+    "main.js": "/adword-demo/static/js/main.baffeefb.chunk.js",
+    "main.js.map": "/adword-demo/static/js/main.baffeefb.chunk.js.map",
+    "runtime-main.js": "/adword-demo/static/js/runtime-main.03ffdcf0.js",
+    "runtime-main.js.map": "/adword-demo/static/js/runtime-main.03ffdcf0.js.map",
+    "static/js/2.81e7840b.chunk.js": "/adword-demo/static/js/2.81e7840b.chunk.js",
+    "static/js/2.81e7840b.chunk.js.map": "/adword-demo/static/js/2.81e7840b.chunk.js.map",
+    "index.html": "/adword-demo/index.html",
+    "precache-manifest.bf088b573881a175d6e58ab81be389b2.js": "/adword-demo/precache-manifest.bf088b573881a175d6e58ab81be389b2.js",
+    "service-worker.js": "/adword-demo/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/adword-demo/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.81e7840b.chunk.js.LICENSE.txt": "/adword-demo/static/js/2.81e7840b.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/adword-demo/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.795d3251.js",
+    "static/js/runtime-main.03ffdcf0.js",
     "static/js/2.81e7840b.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.eb7aaaa6.chunk.js"
+    "static/js/main.baffeefb.chunk.js"
   ]
 }
