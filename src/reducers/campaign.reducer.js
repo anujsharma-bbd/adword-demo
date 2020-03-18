@@ -8,6 +8,11 @@ export const CampaignReducer = (state = initialState, action) => {
             ...state,
             campaignsList: [...state.campaignsList, ...action.payload]
          };
+      case ActionTypes.ADD_USERS:
+         return {
+            ...state,
+            users: [...state.users, ...action.payload]
+         };
       default:
          return state;
    }

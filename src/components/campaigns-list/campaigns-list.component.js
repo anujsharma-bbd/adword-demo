@@ -2,9 +2,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { getUsers } from '../../actions/';
+import { bindActionCreators } from 'redux';
+
 class CampaignsListComponent extends React.Component {
-   constructor(props) { super(props); }
+   constructor(props) {
+      super(props);
+      this.collectUsers = this.collectUsers.bind(this);
+      this.state = { userLoadingMessage: '' };
+   }
+   componentDidMount() {
+      this.collectUsers();
+   }
+   collectUsers() {
+      this.props.getUsers()
+         .then((result) => {
+            if (result) {
+
+            }
+         });
+   }
    render() {
+      console.log(this.props.model.users);
       return (
          <div>
             <div className="table-responsive">
@@ -77,4 +96,9 @@ const mapStateToProps = (state) => {
       model: state.campaignModel
    };
 }
-export default connect(mapStateToProps)(CampaignsListComponent);
+const mapDispatchToProps = (dispatch) => {
+   return bindActionCreators({
+      getUsers: getUsers
+   }, dispatch);
+}
+export default connect(mapStateToProps, mapDispatchToProps)(CampaignsListComponent);
