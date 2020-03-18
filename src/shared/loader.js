@@ -2,18 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 class LoaderComponent extends React.Component {
-
    render() {
+      const { isLoaderShown } = this.props.model;
       return (
-         <div className='screen-loader'>
-
-         </div>
+         isLoaderShown ? <div className='screen-loader'></div> : null
       );
    }
 }
 const mapStateToProps = (state) => {
    return {
-      sharedModel: state.sharedModel
+      model: state.sharedModel
    }
 }
 export default connect(mapStateToProps)(LoaderComponent);

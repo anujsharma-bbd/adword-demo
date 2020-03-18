@@ -2,17 +2,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { getUsers } from '../../actions/';
+import { getUsers ,addCampaigns} from '../../actions/';
 import { bindActionCreators } from 'redux';
 
 class CampaignsListComponent extends React.Component {
    constructor(props) {
       super(props);
       this.collectUsers = this.collectUsers.bind(this);
+      this.exposeAddition = this.exposeAddition.bind(this);
+      this.AddCampaigns = this.AddCampaigns.bind(this);
       this.state = { userLoadingMessage: '' };
    }
    componentDidMount() {
       this.collectUsers();
+      this.exposeAddition();
    }
    collectUsers() {
       this.props.getUsers()
@@ -21,6 +24,12 @@ class CampaignsListComponent extends React.Component {
 
             }
          });
+   }
+   exposeAddition() {
+      window.AddCampaigns = this.AddCampaigns;
+   }
+   AddCampaigns(campaignsList) {
+      this.props.addCampaigns(campaignsList);
    }
    render() {
       console.log(this.props.model.users);
@@ -98,7 +107,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
    return bindActionCreators({
-      getUsers: getUsers
+      getUsers: getUsers,
+      addCampaigns: addCampaigns
    }, dispatch);
 }
 export default connect(mapStateToProps, mapDispatchToProps)(CampaignsListComponent);

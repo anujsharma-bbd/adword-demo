@@ -21,3 +21,8 @@ export const getUsers = () => {
       })
    }
 }
+export const addCampaigns = (payload) => {
+   return (dispatch) => {
+      dispatch(getAction(ActionTypes.ADD_CAMPAIGN_INTO_LIST, payload));
+   }
+}
