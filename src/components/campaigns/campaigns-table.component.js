@@ -67,7 +67,7 @@ export const CampaignsTableComponent = ({ list, users }) => {
                               <StatusComponent active={getStatus(item)} />
                            </td>
                            <td>
-                              {item.budget}
+                              {item.budget || item.Budget} USD
                            </td>
                         </tr>
                      )

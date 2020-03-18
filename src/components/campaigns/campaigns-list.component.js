@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux';
 import { CampaignsTableComponent } from './campaigns-table.component';
 import FilterComponent from '../campaign-filter/campain-filter.component';
 import moment from 'moment';
+import AddCampaignComponent from '../../shared/components/add-campaign.component';
 
 class CampaignsListComponent extends React.Component {
    constructor(props) {
@@ -46,6 +47,7 @@ class CampaignsListComponent extends React.Component {
             <br />
             <FilterComponent setFilters={this.onChangeFilters} />
             <CampaignsTableComponent list={this.props.filteredList} users={this.props.model.users} />
+            <AddCampaignComponent />
          </div >
       );
    }

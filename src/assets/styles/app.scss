@@ -7,12 +7,28 @@
 .inactive {
   @include icon(red);
 }
-.table-header{
+.table-header {
   background-color: $tableHeaderBg;
   color: $white;
 }
-.filter-inputs{
-  .react-datepicker-wrapper{
+.filter-inputs {
+  .react-datepicker-wrapper {
     margin-right: 10px;
+  }
+}
+.add-campaign {
+  position: fixed;
+  z-index: 9999;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 200px;
+  background-color: $white;
+  border-top: 1px solid $gray;
+  .react-datepicker-wrapper,.form-control {
+    margin-right: 10px;
+  }
+  .react-datepicker-wrapper{
+    width: 100%;
   }
 }
