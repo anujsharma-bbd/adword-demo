@@ -26,3 +26,8 @@ export const addCampaigns = (payload) => {
       dispatch(getAction(ActionTypes.ADD_CAMPAIGN_INTO_LIST, payload));
    }
 }
+export const  SetFilters = (payload) => {
+   return dispatch => {
+      dispatch(getAction(ActionTypes.SET_FILTERS, payload));
+   };
+}

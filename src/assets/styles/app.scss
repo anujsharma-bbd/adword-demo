@@ -7,3 +7,7 @@
 .inactive {
   @include icon(red);
 }
+.table-header{
+  background-color: $tableHeaderBg;
+  color: $white;
+}

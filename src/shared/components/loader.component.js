@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Spinner } from 'reactstrap';
 
 class LoaderComponent extends React.Component {
    render() {
       const { isLoaderShown } = this.props.model;
       return (
-         isLoaderShown ? <div className='screen-loader'></div> : null
+         isLoaderShown ? <div className='screen-loader'> <Spinner color="dark" /> </div> : null
       );
    }
 }
