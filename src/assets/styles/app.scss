@@ -25,10 +25,26 @@
   height: 200px;
   background-color: $white;
   border-top: 1px solid $gray;
-  .react-datepicker-wrapper,.form-control {
+  &.closed{
+    height: 50px;
+  }
+  .react-datepicker-wrapper,
+  .form-control {
     margin-right: 10px;
   }
-  .react-datepicker-wrapper{
+  .react-datepicker-wrapper {
     width: 100%;
   }
+  .close-icon {
+    position: fixed;
+    right: 3%;
+    bottom: 21%;
+    z-index: 99999;
+    .btn {
+      font-size: 20px !important;
+      font-weight: bold;
+    }
+  }
 }
+
+.cursor-pointer {cursor: pointer;}

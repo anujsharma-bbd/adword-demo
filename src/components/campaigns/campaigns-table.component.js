@@ -44,7 +44,7 @@ export const CampaignsTableComponent = ({ list, users }) => {
             </thead>
             <tbody>
                {
-                  list && list.map((item, index) => {
+                  list && list.length ? list.map((item, index) => {
                      return (
                         <tr key={index}>
                            <td>
@@ -72,6 +72,11 @@ export const CampaignsTableComponent = ({ list, users }) => {
                         </tr>
                      )
                   })
+                     : <tr>
+                        <td colSpan='6' align="center">
+                           No Campaigns available!!
+                        </td>
+                     </tr>
                }
             </tbody>
          </table>

@@ -20,7 +20,7 @@ class FilterComponent extends React.Component {
       toastr.options = {
          positionClass: 'toast-top-full-width',
          hideDuration: 300,
-         timeOut: 60000
+         timeOut: 5000
       };
       toastr.clear();
    }
