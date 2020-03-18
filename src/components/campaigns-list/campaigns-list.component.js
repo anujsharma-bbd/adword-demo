@@ -54,7 +54,9 @@ class CampaignsListComponent extends React.Component {
                                     {item.endDate}
                                  </td>
                                  <td>
-                                    {item.active.toString()}
+                                    {
+                                       item.active ? <span className='active'>Active</span> : <span className='inactive'>Inactive</span>
+                                    }
                                  </td>
                                  <td>
                                     {item.budget}

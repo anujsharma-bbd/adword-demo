@@ -1,0 +1,16 @@
+@import "./tokens.scss";
+
+@mixin icon($bgcolor: $defaultIconColor) {
+  position: relative;
+  &::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: $bgcolor;
+    border: 1px solid $bgcolor;
+    border-radius: 50%;
+    position: absolute;
+    left: -18px;
+    top: 5px;
+  }
+}

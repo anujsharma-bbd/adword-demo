@@ -1,0 +1,7 @@
+@import "./mixins.scss";
+.active {
+  @include icon(green);
+}
+.inactive {
+  @include icon(red);
+}

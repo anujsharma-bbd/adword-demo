@@ -10,12 +10,6 @@ export const asyncComponent = (importComponent) => {
             isLoading: true
          };
       }
-      // async componentDidMount() {
-      //    const { default: component } = await importComponent();
-      //    this.setState({
-      //       component: null
-      //    });
-      // }
       // adding feature of loading/spinner untill coponent gets loaded
       componentDidMount() {
          this.setState({

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './assets/styles/app.scss';
 import "babel-polyfill";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes } from './routes';
