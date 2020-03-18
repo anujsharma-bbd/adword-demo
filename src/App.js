@@ -2,6 +2,7 @@ import React from 'react';
 import './assets/styles/app.scss';
 import "babel-polyfill";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'toastr/build/toastr.min.css'
 import { Routes } from './routes';
 import LoaderComponent from './shared/components/loader.component';
 function App() {
