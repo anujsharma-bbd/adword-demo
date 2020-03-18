@@ -6,6 +6,7 @@ import { getUsers, addCampaigns, SetFilters } from '../../actions';
 import { bindActionCreators } from 'redux';
 import { CampaignsTableComponent } from './campaigns-table.component';
 import FilterComponent from '../campaign-filter/campain-filter.component';
+import moment from 'moment';
 
 class CampaignsListComponent extends React.Component {
    constructor(props) {
@@ -44,14 +45,35 @@ class CampaignsListComponent extends React.Component {
             <br />
             <br />
             <FilterComponent setFilters={this.onChangeFilters} />
-            <CampaignsTableComponent list={this.props.model.campaignsList} />
+            <CampaignsTableComponent list={this.props.filteredList} />
          </div >
       );
    }
 }
+const getFilteredList = (list, filter, users) => {
+   let filtered = [...list];
+   if (!filter) { return filtered; }
+   if (filter.startDate && filter.endDate) {
+      filtered = filtered.filter(item => {
+         return (
+            (moment(item.startDate) >= moment(filter.startDate) && moment(item.startDate) <= moment(filter.endDate))
+            ||
+            (moment(item.endDate) >= moment(filter.startDate) && moment(item.endDate) <= moment(filter.endDate)))
+      })
+   }
+   if (filter.byName) {
+      let existedUser = users.find(item => item.name.toLowerCase().indexOf(filter.byName.toLowerCase() !== -1));
+      if (!(existedUser)) {
+         return filtered;
+      }
+      filtered = filtered.filter(item => item.userId === existedUser.id);
+   }
+   return filtered;
+}
 const mapStateToProps = (state) => {
    return {
-      model: state.campaignModel
+      model: state.campaignModel,
+      filteredList: getFilteredList(state.campaignModel.campaignsList, state.campaignModel.filters, state.campaignModel.users)
    };
 }
 const mapDispatchToProps = (dispatch) => {
