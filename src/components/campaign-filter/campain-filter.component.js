@@ -1,51 +1,57 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { SetFilters } from '../../actions';
-import { InputGroup, Input, InputGroupAddon, InputGroupText } from 'reactstrap';
+import { InputGroup, Input, InputGroupAddon, Button } from 'reactstrap';
 import ReactDatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 class FilterComponent extends React.Component {
    constructor(props) {
       super(props);
-      this.state = { startDate: null, endDate: null };
-      this.setFilters = this.setFilters.bind(this);
+      this.state = { startDate: null, endDate: null, byName: '' };
       this.onStartChange = this.onStartChange.bind(this);
       this.onEndChange = this.onEndChange.bind(this);
+      this.onSearchNameChange = this.onSearchNameChange.bind(this);
+      this.searchStart = this.searchStart.bind(this);
    }
-   setFilters() {
-
-   }
+   
    onStartChange(val) {
       this.setState({ startDate: val, endDate: null });
    }
    onEndChange(val) {
       this.setState({ endDate: val });
    }
+   onSearchNameChange(val) {
+      this.setState({ byName: val.target.value });
+   }
+   searchStart() {
+      this.props.setFilters(
+         {
+            startDate: this.state.startDate,
+            endDate: this.state.endDate,
+            byName: this.state.byName
+         });
+   }
    render() {
-      const { startDate, endDate } = this.state;
+      const { startDate, endDate, byName } = this.state;
       return (
          <div className='row mb-1'>
-            <div className='col-sm-2'>
-               <ReactDatePicker placeholderText='Start Date' className='form-control' selected={startDate} onChange={this.onStartChange} />
-            </div>
-            <div className='col-sm-2'>
-               <ReactDatePicker placeholderText='End Date' className='form-control' selected={endDate} onChange={this.onEndChange} />
-            </div>
-            <div className='col-sm-5'>
-
-            </div>
-
-            <div className='col-sm-3'>
+            <div className='col-sm-7 filter-inputs'>
                <InputGroup>
-                  <Input placeholder="Search by name" />
-                  <InputGroupAddon addonType="append">
-                     <InputGroupText>Search</InputGroupText>
-                  </InputGroupAddon>
+                  <ReactDatePicker dateFormat="dd/MM/yyyy" placeholderText='Start Date' className='form-control mr-1' selected={startDate} onChange={this.onStartChange} />
+                  <ReactDatePicker dateFormat="dd/MM/yyyy" placeholderText='End Date' className='form-control mr-1' selected={endDate} onChange={this.onEndChange} />
+                  <Input placeholder="Search by name" value={byName} onChange={this.onSearchNameChange} />
                </InputGroup>
-
             </div>
+            <div className='col-sm-2 pl-0'>
+               <InputGroupAddon addonType="append">
+                  <Button color="primary" size="md" onClick={this.searchStart} >
+                     <FontAwesomeIcon icon={faSearch} />
+                  </Button>
+               </InputGroupAddon>
+            </div>
+            <div className='col-sm-4'></div>
          </div>
       );
    }
@@ -56,9 +62,5 @@ const mapStateToProps = (state) => {
       model: state.campaignModel
    }
 }
-const mapDispatchToProps = (dispatch) => {
-   return bindActionCreators({
-      SetFilters: SetFilters
-   }, dispatch);
-}
-export default connect(mapStateToProps, mapDispatchToProps)(FilterComponent);
+
+export default connect(mapStateToProps)(FilterComponent);

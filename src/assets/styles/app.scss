@@ -11,3 +11,8 @@
   background-color: $tableHeaderBg;
   color: $white;
 }
+.filter-inputs{
+  .react-datepicker-wrapper{
+    margin-right: 10px;
+  }
+}

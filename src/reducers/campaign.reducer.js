@@ -13,6 +13,12 @@ export const CampaignReducer = (state = initialState, action) => {
             ...state,
             users: [...state.users, ...action.payload]
          };
+         
+      case ActionTypes.fil:
+         return {
+            ...state,
+            users: [...state.users, ...action.payload]
+         };
       default:
          return state;
    }

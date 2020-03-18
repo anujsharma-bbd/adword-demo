@@ -1,10 +1,11 @@
 import { getAction, ActionTypes } from "./action-types";
+import {  SharedActionTypes } from "../shared/actions/action-types";
 import { Constants } from "../shared/constants";
 
 export const getUsers = () => {
    return (dispatch) => {
       return new Promise((resolve, reject) => {
-         dispatch(getAction(ActionTypes.SHOW_LOADER));
+         dispatch(getAction(SharedActionTypes.SHOW_LOADER));
          fetch(Constants.API_URLS.USERS)
             .then(async res => {
                const result = await res.json();
@@ -16,7 +17,7 @@ export const getUsers = () => {
                reject(false);
             })
             .finally(s => {
-               dispatch(getAction(ActionTypes.HIDE_LOADER));
+               dispatch(getAction(SharedActionTypes.HIDE_LOADER));
             });
       })
    }

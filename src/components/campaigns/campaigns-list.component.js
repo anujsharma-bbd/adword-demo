@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { getUsers, addCampaigns } from '../../actions';
+import { getUsers, addCampaigns, SetFilters } from '../../actions';
 import { bindActionCreators } from 'redux';
 import { CampaignsTableComponent } from './campaigns-table.component';
 import FilterComponent from '../campaign-filter/campain-filter.component';
@@ -13,6 +13,7 @@ class CampaignsListComponent extends React.Component {
       this.collectUsers = this.collectUsers.bind(this);
       this.exposeAddition = this.exposeAddition.bind(this);
       this.AddCampaigns = this.AddCampaigns.bind(this);
+      this.onChangeFilters = this.onChangeFilters.bind(this);
       this.state = { userLoadingMessage: '' };
    }
    componentDidMount() {
@@ -33,13 +34,16 @@ class CampaignsListComponent extends React.Component {
    AddCampaigns(campaignsList) {
       this.props.addCampaigns(campaignsList);
    }
+   onChangeFilters(filterValue) {
+      debugger
+   }
    render() {
       return (
          <div>
-            <br/>
-            <br/>
-            <br/>
-            <FilterComponent />
+            <br />
+            <br />
+            <br />
+            <FilterComponent setFilters={this.onChangeFilters} />
             <CampaignsTableComponent list={this.props.model.campaignsList} />
          </div >
       );
@@ -53,7 +57,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
    return bindActionCreators({
       getUsers: getUsers,
-      addCampaigns: addCampaigns
+      addCampaigns: addCampaigns,
+      SetFilters: SetFilters
    }, dispatch);
 }
 export default connect(mapStateToProps, mapDispatchToProps)(CampaignsListComponent);

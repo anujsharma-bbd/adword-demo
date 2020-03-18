@@ -1,7 +1,8 @@
 import React from 'react';
 import { StatusComponent } from '../../shared/components/status.component';
+import Moment from 'react-moment';
 
-export const CampaignsTableComponent = ({list}) => {
+export const CampaignsTableComponent = ({ list }) => {
    return (
       <div className="table-responsive">
          <table className="table">
@@ -44,10 +45,14 @@ export const CampaignsTableComponent = ({list}) => {
                               {item.userName}
                            </td>
                            <td>
-                              {item.startDate}
+                              <Moment format="DD/MM/YYYY">
+                                 {item.startDate}
+                              </Moment>
                            </td>
                            <td>
-                              {item.endDate}
+                              <Moment format="DD/MM/YYYY">
+                                 {item.endDate}
+                              </Moment>
                            </td>
                            <td>
                               <StatusComponent active={item.active} />

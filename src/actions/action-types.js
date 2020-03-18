@@ -4,7 +4,6 @@ export const ActionTypes = {
    FETCH_USERS: 'FETCH_USERS',
    ADD_USERS: 'ADD_USERS',
    USER_FETCH_ERROR: 'USER_FETCH_ERROR',
-   SHOW_LOADER: 'SHOW_LOADER',
-   HIDE_LOADER: 'HIDE_LOADER'
+   SET_FILTERS:'SET_FILTERS'
 };
 export const getAction = (actionType, payload) => ({ type: actionType, payload });
