@@ -62,11 +62,7 @@ const getFilteredList = (list, filter, users) => {
       })
    }
    if (filter.byName) {
-      let existedUser = users.find(item => item.name.toLowerCase().indexOf(filter.byName.toLowerCase()) !== -1);
-      if (!(existedUser)) {
-         return [];
-      }
-      filtered = filtered.filter(item => item.userId === existedUser.id);
+      filtered = filtered.filter(item => item.name.toLowerCase().indexOf(filter.byName.toLowerCase()) !== -1);
    }
    return filtered;
 }

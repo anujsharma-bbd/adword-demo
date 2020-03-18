@@ -1,12 +1,16 @@
 import React from 'react';
 import { StatusComponent } from '../../shared/components/status.component';
 import Moment from 'react-moment';
+import moment from 'moment';
 
 export const CampaignsTableComponent = ({ list, users }) => {
 
    const getUserName = (userID) => {
       let user = users.find(x => x.id === userID);
       return (user && user.name) || 'Unknown User';
+   }
+   const getStatus = (campaign) => {
+      return (moment() >= moment(campaign.startDate) && moment() <= moment(campaign.endDate))
    }
    return (
       <div className="table-responsive">
@@ -44,23 +48,23 @@ export const CampaignsTableComponent = ({ list, users }) => {
                      return (
                         <tr key={index}>
                            <td>
-                              {item.campaignName}
+                              {item.name}
                            </td>
                            <td>
                               {getUserName(item.userId)}
                            </td>
                            <td>
-                              <Moment format="DD-MMM-YYYY">
+                              <Moment format="MM/DD/YYYY">
                                  {item.startDate}
                               </Moment>
                            </td>
                            <td>
-                              <Moment format="DD-MMM-YYYY">
+                              <Moment format="MM/DD/YYYY">
                                  {item.endDate}
                               </Moment>
                            </td>
                            <td>
-                              <StatusComponent active={item.active} />
+                              <StatusComponent active={getStatus(item)} />
                            </td>
                            <td>
                               {item.budget}
