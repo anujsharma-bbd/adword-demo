@@ -2,7 +2,12 @@ import React from 'react';
 import { StatusComponent } from '../../shared/components/status.component';
 import Moment from 'react-moment';
 
-export const CampaignsTableComponent = ({ list }) => {
+export const CampaignsTableComponent = ({ list, users }) => {
+
+   const getUserName = (userID) => {
+      let user = users.find(x => x.id === userID);
+      return (user && user.name) || 'Unknown User';
+   }
    return (
       <div className="table-responsive">
          <table className="table">
@@ -42,7 +47,7 @@ export const CampaignsTableComponent = ({ list }) => {
                               {item.campaignName}
                            </td>
                            <td>
-                              {item.userName}
+                              {getUserName(item.userId)}
                            </td>
                            <td>
                               <Moment format="DD/MM/YYYY">

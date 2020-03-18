@@ -45,7 +45,7 @@ class CampaignsListComponent extends React.Component {
             <br />
             <br />
             <FilterComponent setFilters={this.onChangeFilters} />
-            <CampaignsTableComponent list={this.props.filteredList} />
+            <CampaignsTableComponent list={this.props.filteredList} users={this.props.model.users} />
          </div >
       );
    }
@@ -62,9 +62,9 @@ const getFilteredList = (list, filter, users) => {
       })
    }
    if (filter.byName) {
-      let existedUser = users.find(item => item.name.toLowerCase().indexOf(filter.byName.toLowerCase() !== -1));
+      let existedUser = users.find(item => item.name.toLowerCase().indexOf(filter.byName.toLowerCase()) !== -1);
       if (!(existedUser)) {
-         return filtered;
+         return [];
       }
       filtered = filtered.filter(item => item.userId === existedUser.id);
    }
