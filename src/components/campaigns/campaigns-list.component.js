@@ -25,9 +25,7 @@ class CampaignsListComponent extends React.Component {
    collectUsers() {
       this.props.getUsers()
          .then((result) => {
-            if (result) {
-
-            }
+           
          });
    }
    exposeAddition() {

@@ -6,7 +6,7 @@ import moment from 'moment';
 export const CampaignsTableComponent = ({ list, users }) => {
 
    const getUserName = (userID) => {
-      let user = users.find(x => x.id === userID);
+      let user = users.find(x => x.id.toString() === userID.toString());
       return (user && user.name) || 'Unknown User';
    }
    const getStatus = (campaign) => {
@@ -51,7 +51,7 @@ export const CampaignsTableComponent = ({ list, users }) => {
                               {item.name}
                            </td>
                            <td>
-                              {getUserName(item.userId)}
+                              {getUserName(item.userId)} #{item.userId}
                            </td>
                            <td>
                               <Moment format="MM/DD/YYYY">
