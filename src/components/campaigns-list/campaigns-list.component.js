@@ -2,8 +2,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { getUsers ,addCampaigns} from '../../actions/';
+import { getUsers, addCampaigns } from '../../actions/';
 import { bindActionCreators } from 'redux';
+import { StatusComponent } from '../../shared/components/status.component';
 
 class CampaignsListComponent extends React.Component {
    constructor(props) {
@@ -82,9 +83,7 @@ class CampaignsListComponent extends React.Component {
                                     {item.endDate}
                                  </td>
                                  <td>
-                                    {
-                                       item.active ? <span className='active'>Active</span> : <span className='inactive'>Inactive</span>
-                                    }
+                                    <StatusComponent active={item.active} />
                                  </td>
                                  <td>
                                     {item.budget}
