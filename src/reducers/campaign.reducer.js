@@ -14,7 +14,7 @@ export const CampaignReducer = (state = initialState, action) => {
             users: [...state.users, ...action.payload]
          };
          
-      case ActionTypes.fil:
+      case ActionTypes.SET_FILTERS:
          return {
             ...state,
             users: [...state.users, ...action.payload]

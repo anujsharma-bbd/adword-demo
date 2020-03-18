@@ -35,7 +35,7 @@ class CampaignsListComponent extends React.Component {
       this.props.addCampaigns(campaignsList);
    }
    onChangeFilters(filterValue) {
-      debugger
+      this.props.SetFilters(filterValue);
    }
    render() {
       return (
