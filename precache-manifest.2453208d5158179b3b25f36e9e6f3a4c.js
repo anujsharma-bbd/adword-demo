@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "16b679081eee5945f7dc1f22a06e2195",
+    "revision": "38768dd98260ae452769aaa02bfc6e4d",
     "url": "/adword-demo/index.html"
   },
   {
@@ -32,15 +32,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/adword-demo/static/js/3.c593973c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c6288d2ff960f8e8732b",
-    "url": "/adword-demo/static/js/4.6938e8e7.chunk.js"
+    "revision": "a9e000172c37332de317",
+    "url": "/adword-demo/static/js/4.a2a631d3.chunk.js"
   },
   {
     "revision": "e5276c66f58e301f3062",
     "url": "/adword-demo/static/js/main.f92da256.chunk.js"
   },
   {
-    "revision": "a13355340c759f2845d2",
-    "url": "/adword-demo/static/js/runtime-main.ffbb8cf4.js"
+    "revision": "3e6672b5b8dc339518a5",
+    "url": "/adword-demo/static/js/runtime-main.69cb658e.js"
   }
 ]);
