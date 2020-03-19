@@ -5,7 +5,7 @@
 <br/>
 #How to add new campaign 
 <br/>
-![How to add new campaign](https://user-images.githubusercontent.com/18569992/77066372-05a26480-6a09-11ea-9413-49ecfbf90c79.png)
+![image](https://user-images.githubusercontent.com/18569992/77066372-05a26480-6a09-11ea-9413-49ecfbf90c79.png)
 
 
 #Add campaign Screen 
