@@ -32,6 +32,7 @@ export class FilterComponent extends React.Component {
       toastr.clear();
       if (moment(val) < moment(this.state.startDate)) {
          toastr.error('End Date should be greater than Start Date.');
+         this.setState({ endDate: null });
          return;
       }
       this.setState({ endDate: val });

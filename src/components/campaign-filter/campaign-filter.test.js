@@ -9,7 +9,7 @@ const setFiltersSpy = jest.fn();
 const setup = () => {
    const mockStore = configureMockStore();
    const store = mockStore({ ...initialState });
-   const enzymeWrapper = shallow((<FilterComponent setFilters={setFiltersSpy} store={store} />));
+   const enzymeWrapper = shallow(<FilterComponent setFilters={setFiltersSpy} store={store} />);
    return enzymeWrapper;
 }
 describe('Campaign Filter Component :', () => {
@@ -38,6 +38,14 @@ describe('Campaign Filter Component :', () => {
       expect(wrapper.state('startDate')).toEqual(today);
       expect(wrapper.state('endDate')).toEqual(tomorrow);
       expect(wrapper.state('byName')).toEqual(DAT);
+   })
+   it('End Date should not be less than Start date', () => {
+      let today = moment(),next = moment().add(10, 'day');
+      let instance = wrapper.instance();
+      instance.onStartChange(next);
+      instance.onEndChange(today);
+      expect(wrapper.state('startDate')).toEqual(next);
+      expect(wrapper.state('endDate')).toBeNull();
    })
    it('should check validations on search', () => {
       wrapper.find('#searchBtn').simulate('click');
