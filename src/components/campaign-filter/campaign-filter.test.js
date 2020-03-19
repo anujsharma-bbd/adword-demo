@@ -4,11 +4,11 @@ import configureMockStore from "redux-mock-store";
 
 import { FilterComponent } from './campain-filter.component';
 import moment from 'moment';
-
+import { initialState } from '../../store/initial-state';
 const setFiltersSpy = jest.fn();
 const setup = () => {
    const mockStore = configureMockStore();
-   const store = mockStore({});
+   const store = mockStore({ ...initialState });
    const enzymeWrapper = shallow((<FilterComponent setFilters={setFiltersSpy} store={store} />));
    return enzymeWrapper;
 }
@@ -43,7 +43,7 @@ describe('Campaign Filter Component :', () => {
       wrapper.find('#searchBtn').simulate('click');
       expect(setFiltersSpy).toHaveBeenCalledWith({ startDate: null, endDate: null, byName: '' });
    })
-   
+
    it('should not call callback when only startdate is available', () => {
       let today = moment();
       let instance = wrapper.instance();
@@ -51,7 +51,7 @@ describe('Campaign Filter Component :', () => {
       wrapper.find('#searchBtn').simulate('click');
       expect(setFiltersSpy).not.toHaveBeenCalled();
    })
-   
+
    it('should not call callback when only enddate is available', () => {
       let today = moment();
       let instance = wrapper.instance();
