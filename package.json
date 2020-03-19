@@ -45,11 +45,12 @@
     ]
   },
   "devDependencies": {
-    "react-scripts": "3.4.0",
+    "@types/jest": "^25.1.4",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "gh-pages": "^2.2.0",
     "node-sass": "^4.13.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "gh-pages": "^2.2.0"
+    "react-scripts": "3.4.0",
+    "redux-mock-store": "^1.5.4"
   }
 }

@@ -9,7 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
 
 
-class FilterComponent extends React.Component {
+export class FilterComponent extends React.Component {
    constructor(props) {
       super(props);
       this.state = { startDate: null, endDate: null, byName: '' };
@@ -58,14 +58,14 @@ class FilterComponent extends React.Component {
          <div className='row mb-1'>
             <div className='col-sm-7 filter-inputs'>
                <InputGroup>
-                  <ReactDatePicker isClearable dateFormat="MM/dd/yyyy" placeholderText='Start Date' className='form-control mr-1' selected={startDate} onChange={this.onStartChange} />
-                  <ReactDatePicker isClearable dateFormat="MM/dd/yyyy" placeholderText='End Date' className='form-control mr-1' selected={endDate} onChange={this.onEndChange} />
+                  <ReactDatePicker id='startDate' isClearable dateFormat="MM/dd/yyyy" placeholderText='Start Date' className='form-control mr-1' selected={startDate} onChange={this.onStartChange} />
+                  <ReactDatePicker id='endDate' isClearable dateFormat="MM/dd/yyyy" placeholderText='End Date' className='form-control mr-1' selected={endDate} onChange={this.onEndChange} />
                   <Input placeholder="Search by name" value={byName} onChange={this.onSearchNameChange} />
                </InputGroup>
             </div>
             <div className='col-sm-2 pl-0'>
                <InputGroupAddon addonType="append">
-                  <Button color="primary" size="md" onClick={this.searchStart} >
+                  <Button id='searchBtn' color="primary" size="md" onClick={this.searchStart} >
                      <FontAwesomeIcon icon={faSearch} />
                   </Button>
                </InputGroupAddon>
