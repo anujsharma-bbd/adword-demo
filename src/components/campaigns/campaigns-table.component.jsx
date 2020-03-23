@@ -51,7 +51,7 @@ export const CampaignsTableComponent = ({ list, users }) => {
                               {item.name}
                            </td>
                            <td>
-                              {getUserName(item.userId)} #{item.userId}
+                              {getUserName(item.userId)}
                            </td>
                            <td>
                               <Moment format="MM/DD/YYYY">
