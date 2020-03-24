@@ -23,10 +23,7 @@ class CampaignsListComponent extends React.Component {
       this.exposeAddition();
    }
    collectUsers() {
-      this.props.getUsers()
-         .then((result) => {
-           
-         });
+      this.props.getUsers();
    }
    exposeAddition() {
       window.AddCampaigns = this.AddCampaigns;

@@ -12,7 +12,7 @@ import moment from 'moment';
 export class FilterComponent extends React.Component {
    constructor(props) {
       super(props);
-      this.state = { startDate: null, endDate: null, byName: '' };
+      this.state = { startDate: null, endDate: null, byName: '' };;
       this.onStartChange = this.onStartChange.bind(this);
       this.onEndChange = this.onEndChange.bind(this);
       this.onSearchNameChange = this.onSearchNameChange.bind(this);
@@ -24,7 +24,14 @@ export class FilterComponent extends React.Component {
       };
       toastr.clear();
    }
-
+   static getDerivedStateFromProps(props, state) {
+      if (props.model.filters && props.model.filters.clears) {
+         let _newState = { startDate: null, endDate: null, byName: '' };
+         props.setFilters(_newState);
+         return _newState;
+      }
+      return { startDate: (props.model.filters && props.model.filters.startDate) || state.startDate || null, endDate: (props.model.filters && props.model.filters.endDate) || state.endDate || null, byName: (props.model.filters && props.model.filters.byName) || state.byName || '' };
+   }
    onStartChange(val) {
       this.setState({ startDate: val, endDate: null });
    }

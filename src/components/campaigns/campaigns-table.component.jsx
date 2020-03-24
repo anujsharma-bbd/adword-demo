@@ -12,8 +12,11 @@ export const CampaignsTableComponent = ({ list, users }) => {
    const getStatus = (campaign) => {
       return (moment() >= moment(campaign.startDate) && moment() <= moment(campaign.endDate))
    }
+   const kFormatter = (num) => {
+      return Math.abs(num) > 999 ? Math.sign(num) * ((Math.abs(num) / 1000).toFixed(1)) + 'k' : Math.sign(num) * Math.abs(num)
+   }
    return (
-      <div className="table-responsive">
+      <div className="table-responsive mb-5">
          <table className="table">
             <thead>
                <tr className='table-header'>
@@ -67,7 +70,7 @@ export const CampaignsTableComponent = ({ list, users }) => {
                               <StatusComponent active={getStatus(item)} />
                            </td>
                            <td>
-                              {item.budget || item.Budget} USD
+                              {kFormatter(item.budget || item.Budget)} USD
                            </td>
                         </tr>
                      )
