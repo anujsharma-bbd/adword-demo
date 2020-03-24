@@ -67,7 +67,7 @@ class AddCampaignComponent extends React.Component {
                         <Input name='name' placeholder="Name" value={name} onChange={this.onChange} />
                      </div>
                      <div className='col-sm-2'>
-                        <ReactDatePicker isClearable name='startDate' dateFormat="MM/dd/yyyy" placeholderText='Start Date' className='form-control' selected={startDate} onChange={(val) => this.onChange({ target: { name: 'startDate', value: val } })} />
+                        <ReactDatePicker autoComplete='off' isClearable name='startDate' dateFormat="MM/dd/yyyy" placeholderText='Start Date' className='form-control' selected={startDate} onChange={(val) => this.onChange({ target: { name: 'startDate', value: val } })} />
                      </div>
                      <div className='col-sm-3'>
                      </div>
@@ -82,7 +82,7 @@ class AddCampaignComponent extends React.Component {
                         <Input type='number' name='budget' placeholder="Budget" value={budget} onChange={this.onChange} />
                      </div>
                      <div className='col-sm-2'>
-                        <ReactDatePicker isClearable name='endDate' dateFormat="MM/dd/yyyy" placeholderText='End Date' className='form-control' selected={endDate} onChange={(val) => this.onChange({ target: { name: 'endDate', value: val } })} />
+                        <ReactDatePicker  autoComplete='off' isClearable name='endDate' dateFormat="MM/dd/yyyy" placeholderText='End Date' className='form-control' selected={endDate} onChange={(val) => this.onChange({ target: { name: 'endDate', value: val } })} />
                      </div>
                      <div className='col-sm-3'>
 
