@@ -68,7 +68,7 @@ export class FilterComponent extends React.Component {
                <InputGroup>
                   <ReactDatePicker autoComplete='off' id='startDate' isClearable dateFormat="MM/dd/yyyy" placeholderText='Start Date' className='form-control mr-1' selected={startDate} onChange={this.onStartChange} />
                   <ReactDatePicker autoComplete='off' id='endDate' isClearable dateFormat="MM/dd/yyyy" placeholderText='End Date' className='form-control mr-1' selected={endDate} onChange={this.onEndChange} />
-                  <Input placeholder="Search by name" value={byName} onChange={this.onSearchNameChange} />
+                  <Input  autoComplete='off' placeholder="Search by name" value={byName} onChange={this.onSearchNameChange} />
                </InputGroup>
             </div>
             <div className='col-sm-2 pl-0'>
