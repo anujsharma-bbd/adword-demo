@@ -30,3 +30,52 @@
     { id:2,name: 'Campaign 2', userId: 99, startDate: '12/02/2012', endDate: '12/12/2020', budget: '3k USD' }
     ])
 </code>
+
+# running project inside of an environment 
+its mandatory to pass --env=qa | prod | dev etc whatever we need to use environment <br/>
+ <br/>
+  like for qa environment --> <br/>
+<code>
+  npm start --env=qa
+</code>
+<br/>
+ <br/>
+for prod environment --> <br/>
+<code>
+  npm start --env=prod
+</code>
+<br/>
+ <br/>
+for dev environment --> <br/>
+<code>
+  <br/>
+  npm start --env=dev
+</code>
+<br/>
+
+
+# creating build with an environment 
+its mandatory to pass --env=qa | prod | dev etc whatever we need to use environment <br/>
+ <br/>
+like for qa environment --> <br/>
+<code>
+  npm run build --env=qa
+</code>
+<br/>
+ <br/>
+for prod environment --> <br/>
+<code>
+  npm run build --env=prod
+</code>
+<br/>
+ <br/>
+for dev environment --> <br/>
+<code>
+  <br/>
+  npm run build --env=dev
+</code>
+<br/>
+
+<br/>
+<br/>
+<br/>

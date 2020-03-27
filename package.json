@@ -4,15 +4,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.27",
-    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.4.1",
     "moment": "^2.24.0",
-    "react": "^16.13.0",
-    "react-datepicker": "^2.14.0",
-    "react-dom": "^16.13.0",
+    "react": "^16.13.1",
+    "react-datepicker": "^2.14.1",
+    "react-dom": "^16.13.1",
     "react-moment": "^0.9.7",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
@@ -22,6 +22,8 @@
     "toastr": "^2.1.4"
   },
   "scripts": {
+    "prestart": "node node_modules/react-environments --path=src/environments",
+    "prebuild": "node node_modules/react-environments --path=src/environments",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -51,6 +53,7 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "gh-pages": "^2.2.0",
     "node-sass": "^4.13.1",
+    "react-environments": "^1.2.1",
     "react-scripts": "3.4.0",
     "redux-mock-store": "^1.5.4"
   }

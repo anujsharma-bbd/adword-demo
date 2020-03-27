@@ -7,7 +7,7 @@ export const CampaignReducer = (state = initialState, action) => {
          return {
             ...state,
             campaignsList: [...state.campaignsList, ...action.payload],
-            filters: { clears: true }
+            filters: {  }
          };
       case ActionTypes.ADD_USERS:
          return {
@@ -18,7 +18,7 @@ export const CampaignReducer = (state = initialState, action) => {
       case ActionTypes.SET_FILTERS:
          return {
             ...state,
-            filters: { ...state.filters, ...action.payload, clears: false }
+            filters: { ...state.filters, ...action.payload }
          };
       default:
          return state;
