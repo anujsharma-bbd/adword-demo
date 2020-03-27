@@ -1,32 +1,32 @@
 {
   "files": {
-    "main.css": "/adword-demo/static/css/main.1dfabc41.chunk.css",
-    "main.js": "/adword-demo/static/js/main.ac4da098.chunk.js",
-    "main.js.map": "/adword-demo/static/js/main.ac4da098.chunk.js.map",
-    "runtime-main.js": "/adword-demo/static/js/runtime-main.3241d7f5.js",
-    "runtime-main.js.map": "/adword-demo/static/js/runtime-main.3241d7f5.js.map",
+    "main.css": "/adword-demo/static/css/main.4b935fcb.chunk.css",
+    "main.js": "/adword-demo/static/js/main.dd5efc06.chunk.js",
+    "main.js.map": "/adword-demo/static/js/main.dd5efc06.chunk.js.map",
+    "runtime-main.js": "/adword-demo/static/js/runtime-main.9f0805d4.js",
+    "runtime-main.js.map": "/adword-demo/static/js/runtime-main.9f0805d4.js.map",
     "static/css/2.ae01b910.chunk.css": "/adword-demo/static/css/2.ae01b910.chunk.css",
-    "static/js/2.89d28304.chunk.js": "/adword-demo/static/js/2.89d28304.chunk.js",
-    "static/js/2.89d28304.chunk.js.map": "/adword-demo/static/js/2.89d28304.chunk.js.map",
+    "static/js/2.c0e3c4c0.chunk.js": "/adword-demo/static/js/2.c0e3c4c0.chunk.js",
+    "static/js/2.c0e3c4c0.chunk.js.map": "/adword-demo/static/js/2.c0e3c4c0.chunk.js.map",
     "static/css/3.b90ce945.chunk.css": "/adword-demo/static/css/3.b90ce945.chunk.css",
-    "static/js/3.d21f5727.chunk.js": "/adword-demo/static/js/3.d21f5727.chunk.js",
-    "static/js/3.d21f5727.chunk.js.map": "/adword-demo/static/js/3.d21f5727.chunk.js.map",
-    "static/js/4.07116b76.chunk.js": "/adword-demo/static/js/4.07116b76.chunk.js",
-    "static/js/4.07116b76.chunk.js.map": "/adword-demo/static/js/4.07116b76.chunk.js.map",
+    "static/js/3.9a538968.chunk.js": "/adword-demo/static/js/3.9a538968.chunk.js",
+    "static/js/3.9a538968.chunk.js.map": "/adword-demo/static/js/3.9a538968.chunk.js.map",
+    "static/js/4.d3ebe1a3.chunk.js": "/adword-demo/static/js/4.d3ebe1a3.chunk.js",
+    "static/js/4.d3ebe1a3.chunk.js.map": "/adword-demo/static/js/4.d3ebe1a3.chunk.js.map",
     "index.html": "/adword-demo/index.html",
-    "precache-manifest.74ba00c79eaf18152ac67bc522cd23fe.js": "/adword-demo/precache-manifest.74ba00c79eaf18152ac67bc522cd23fe.js",
+    "precache-manifest.384c394cb319f2c647fec3607dcf9976.js": "/adword-demo/precache-manifest.384c394cb319f2c647fec3607dcf9976.js",
     "service-worker.js": "/adword-demo/service-worker.js",
     "static/css/2.ae01b910.chunk.css.map": "/adword-demo/static/css/2.ae01b910.chunk.css.map",
     "static/css/3.b90ce945.chunk.css.map": "/adword-demo/static/css/3.b90ce945.chunk.css.map",
-    "static/css/main.1dfabc41.chunk.css.map": "/adword-demo/static/css/main.1dfabc41.chunk.css.map",
-    "static/js/2.89d28304.chunk.js.LICENSE.txt": "/adword-demo/static/js/2.89d28304.chunk.js.LICENSE.txt",
-    "static/js/3.d21f5727.chunk.js.LICENSE.txt": "/adword-demo/static/js/3.d21f5727.chunk.js.LICENSE.txt"
+    "static/css/main.4b935fcb.chunk.css.map": "/adword-demo/static/css/main.4b935fcb.chunk.css.map",
+    "static/js/2.c0e3c4c0.chunk.js.LICENSE.txt": "/adword-demo/static/js/2.c0e3c4c0.chunk.js.LICENSE.txt",
+    "static/js/3.9a538968.chunk.js.LICENSE.txt": "/adword-demo/static/js/3.9a538968.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.3241d7f5.js",
+    "static/js/runtime-main.9f0805d4.js",
     "static/css/2.ae01b910.chunk.css",
-    "static/js/2.89d28304.chunk.js",
-    "static/css/main.1dfabc41.chunk.css",
-    "static/js/main.ac4da098.chunk.js"
+    "static/js/2.c0e3c4c0.chunk.js",
+    "static/css/main.4b935fcb.chunk.css",
+    "static/js/main.dd5efc06.chunk.js"
   ]
 }
