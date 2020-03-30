@@ -75,6 +75,15 @@ for dev environment --> <br/>
   npm run build --env=dev
 </code>
 <br/>
+<br/>
+<br/>
+
+#Spacial-Features & Tech Stack
+
+1) react 16.13+
+2) redux
+3) immer  -- for store immutibility 
+4) Data persists after page refresh
 
 <br/>
 <br/>
