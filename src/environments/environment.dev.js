@@ -1,5 +1,7 @@
 module.exports = {
    appName: 'AdForm Application DEV',
    baseURL: '',
-   env:'DEV'
+   env: 'DEV',
+   storageCampaignKey: 'campaigns',
+   storageSharedKey: 'common'
 };

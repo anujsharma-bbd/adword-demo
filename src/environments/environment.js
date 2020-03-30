@@ -1,5 +1,7 @@
 module.exports = {
-    "appName": "AdForm Application QA",
+    "appName": "AdForm Application",
     "baseURL": "",
-    "env": "QA"
+    "env": "PROD",
+    "storageCampaignKey": "camps",
+    "storageSharedKey": "common"
 }
