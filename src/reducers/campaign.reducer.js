@@ -1,26 +1,20 @@
 import { initialState } from "../store/initial-state";
 import { ActionTypes } from "../actions/action-types";
+import produce from 'immer';
 
-export const CampaignReducer = (state = initialState, action) => {
+export const CampaignReducer = produce((state = initialState, action) => {
    switch (action.type) {
       case ActionTypes.ADD_CAMPAIGN_INTO_LIST:
-         return {
-            ...state,
-            campaignsList: [...state.campaignsList, ...action.payload],
-            filters: {  }
-         };
+         state.campaignsList.push(...action.payload);
+         state.filters = {};
+         break;
       case ActionTypes.ADD_USERS:
-         return {
-            ...state,
-            users: [...state.users, ...action.payload]
-         };
-
+         state.users.push(...action.payload);
+         break;
       case ActionTypes.SET_FILTERS:
-         return {
-            ...state,
-            filters: { ...state.filters, ...action.payload }
-         };
+         state.filters = { ...state.filters, ...action.payload };
+         break;
       default:
          return state;
    }
-}
+});

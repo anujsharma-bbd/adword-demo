@@ -1,19 +1,16 @@
 import { SharedActionTypes } from "./actions/action-types";
 import { SharedState } from "./initial-state.js";
+import produce from 'immer';
 
-export const SharedReducer = (state = SharedState, action) => {
+export const SharedReducer = produce((state = SharedState, action) => {
    switch (action.type) {
       case SharedActionTypes.SHOW_LOADER:
-         return {
-            ...state,
-            isLoaderShown: true
-         }
+         state.isLoaderShown = true;
+         break;
       case SharedActionTypes.HIDE_LOADER:
-         return {
-            ...state,
-            isLoaderShown: false
-         }
+         state.isLoaderShown = false;
+         break;
       default:
          return state;
    }
-}
+})

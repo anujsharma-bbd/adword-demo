@@ -1,5 +1,5 @@
 module.exports = {
-    "appName": "AdForm Application DEV",
+    "appName": "AdForm Application QA",
     "baseURL": "",
-    "env": "DEV"
+    "env": "QA"
 }
