@@ -82,7 +82,7 @@ for dev environment --> <br/>
 
 1) react 16.13+
 2) redux
-3) immer  -- for store immutibility 
+3) immer  -- for store immutability 
 4) Data persists after page refresh
 
 <br/>
