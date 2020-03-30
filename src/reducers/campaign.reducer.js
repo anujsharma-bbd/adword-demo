@@ -19,6 +19,9 @@ export const CampaignReducer = produce((state = persistedData || initialState, a
       case ActionTypes.SET_FILTERS:
          state.filters = { ...state.filters, ...action.payload };
          break;
+      case ActionTypes.ADD_CAMPAIGN_SAVE_CHANGES:
+         state.addCampaign = { ...state.addCampaign, ...action.payload };
+         break;
       default:
          isInitiation = true;
          setStorage(environment.storageCampaignKey, state);

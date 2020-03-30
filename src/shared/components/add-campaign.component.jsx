@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { addCampaigns } from "../../actions";
+import { addCampaigns, saveChanges } from "../../actions";
 import { Input, InputGroupAddon, Button } from 'reactstrap';
 import ReactDatePicker from 'react-datepicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,7 +9,7 @@ import { faSave as btnIcon, faPlusCircle as plusicon } from '@fortawesome/free-s
 import toastr from 'toastr';
 
 const AddCampaignComponent = (props) => {
-   const [state, setState] = useState({ name: '', id: '', userId: '', startDate: null, endDate: null, budget: '', isClosed: true });
+   const [state, setState] = useState({ name: props.model.name || '', id: props.model.id || '', userId: props.model.userId || '', startDate: (props.model.startDate && new Date(props.model.startDate)) || null, endDate: (props.model.endDate && new Date(props.model.endDate)) || null, budget: props.model.budget || '', isClosed: props.model.isClosed });
    useEffect(() => {
       toastr.options = {
          positionClass: 'toast-top-full-width',
@@ -23,6 +23,7 @@ const AddCampaignComponent = (props) => {
       let name = ev.target.name, value = ev.target.value;
       copyState[name] = value;
       setState(copyState);
+      props.saveChanges(copyState);
    }
    const addCampaigns = () => {
       toastr.clear();
@@ -33,13 +34,17 @@ const AddCampaignComponent = (props) => {
       }
       props.addCampaigns([{ name, id, userId, startDate, endDate, budget }]);
       setState({ name: '', id: '', userId: '', startDate: null, endDate: null, budget: '' });
+      onClose();
    }
    const onClose = () => {
       toastr.clear();
-      setState({ name: '', id: '', userId: '', startDate: null, endDate: null, budget: '', isClosed: true });
+      let newSt = { name: '', id: '', userId: '', startDate: null, endDate: null, budget: '', isClosed: true };
+      setState(newSt);
+      props.saveChanges(newSt);
    }
    const onOpen = () => {
       setState({ isClosed: false });
+      props.saveChanges({ isClosed: false });
    }
    const { name, id, userId, startDate, endDate, budget, isClosed } = state;
    return (
@@ -55,10 +60,10 @@ const AddCampaignComponent = (props) => {
                   <div className='col-sm-3'>
                   </div>
                   <div className='col-sm-2'>
-                     <Input  autoComplete='off' type='number' name='id' placeholder="Id" value={id} onChange={onChange} />
+                     <Input autoComplete='off' type='number' name='id' placeholder="Id" value={id} onChange={onChange} />
                   </div>
                   <div className='col-sm-2'>
-                     <Input  autoComplete='off' name='name' placeholder="Name" value={name} onChange={onChange} />
+                     <Input autoComplete='off' name='name' placeholder="Name" value={name} onChange={onChange} />
                   </div>
                   <div className='col-sm-2'>
                      <ReactDatePicker autoComplete='off' isClearable name='startDate' dateFormat="MM/dd/yyyy" placeholderText='Start Date' className='form-control' selected={startDate} onChange={(val) => onChange({ target: { name: 'startDate', value: val } })} />
@@ -114,9 +119,16 @@ const AddCampaignComponent = (props) => {
       </div>
    )
 }
+
+const mapStateToProps = (state) => {
+   return {
+      model: state.campaignModel.addCampaign
+   }
+}
 const mapDispatchToProps = (dispatch) => {
    return bindActionCreators({
-      addCampaigns: addCampaigns
+      addCampaigns: addCampaigns,
+      saveChanges: saveChanges
    }, dispatch);
 }
-export default connect(null, mapDispatchToProps)(AddCampaignComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(AddCampaignComponent);

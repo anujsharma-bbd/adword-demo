@@ -17,7 +17,6 @@ export class FilterComponent extends React.Component {
          startDateP = startDateP ? Date.parse(startDateP) : null;
          endDateP = endDateP ? Date.parse(endDateP) : null;
          this.state = { startDate: startDateP || null, endDate: endDateP || null, byName: byNameP || '' };
-
       } else {
          this.state = { startDate: null, endDate: null, byName: '' };
       }
