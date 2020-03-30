@@ -12,7 +12,15 @@ import moment from 'moment';
 export class FilterComponent extends React.Component {
    constructor(props) {
       super(props);
-      this.state = { startDate: null, endDate: null, byName: '' };;
+      if (props && props.model && props.model.filters) {
+         let { startDate: startDateP, endDate: endDateP, byName: byNameP } = props.model.filters;
+         startDateP = startDateP ? Date.parse(startDateP) : null;
+         endDateP = endDateP ? Date.parse(endDateP) : null;
+         this.state = { startDate: startDateP || null, endDate: endDateP || null, byName: byNameP || '' };
+
+      } else {
+         this.state = { startDate: null, endDate: null, byName: '' };
+      }
       this.onStartChange = this.onStartChange.bind(this);
       this.onEndChange = this.onEndChange.bind(this);
       this.onSearchNameChange = this.onSearchNameChange.bind(this);
@@ -54,13 +62,14 @@ export class FilterComponent extends React.Component {
    }
    render() {
       const { startDate, endDate, byName } = this.state;
+
       return (
          <div className='row mb-1'>
             <div className='col-sm-7 filter-inputs'>
                <InputGroup>
                   <ReactDatePicker autoComplete='off' id='startDate' isClearable dateFormat="MM/dd/yyyy" placeholderText='Start Date' className='form-control mr-1' selected={startDate} onChange={this.onStartChange} />
                   <ReactDatePicker autoComplete='off' id='endDate' isClearable dateFormat="MM/dd/yyyy" placeholderText='End Date' className='form-control mr-1' selected={endDate} onChange={this.onEndChange} />
-                  <Input  autoComplete='off' placeholder="Search by name" value={byName} onChange={this.onSearchNameChange} />
+                  <Input autoComplete='off' placeholder="Search by name" value={byName} onChange={this.onSearchNameChange} />
                </InputGroup>
             </div>
             <div className='col-sm-2 pl-0'>
