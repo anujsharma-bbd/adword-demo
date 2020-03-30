@@ -6,7 +6,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { store } from './store/store';
 import environment from './environments/environment';
-import setAutoFreeze from 'immer';
+import { setAutoFreeze } from 'immer';
 
 if (environment.env === 'PROD') {
    setAutoFreeze(false); // by deault its auto-freeze
