@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7fc5a78b1bfd6255defbea2980d4a767",
+    "revision": "9f3da8a094c506a15a0aca9a181d65fb",
     "url": "/adword-demo/index.html"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/adword-demo/static/css/3.b90ce945.chunk.css"
   },
   {
-    "revision": "2fef6c4eef1de3b3afc5",
+    "revision": "dd5ae6db2ee549b455bb",
     "url": "/adword-demo/static/css/main.4b935fcb.chunk.css"
   },
   {
@@ -36,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/adword-demo/static/js/4.2f62d0e8.chunk.js"
   },
   {
-    "revision": "2fef6c4eef1de3b3afc5",
-    "url": "/adword-demo/static/js/main.b64e2633.chunk.js"
+    "revision": "dd5ae6db2ee549b455bb",
+    "url": "/adword-demo/static/js/main.f6e320d6.chunk.js"
   },
   {
     "revision": "eb9e63e717130521965b",
