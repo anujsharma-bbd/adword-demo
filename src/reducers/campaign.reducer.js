@@ -6,27 +6,28 @@ import { getStorage, setStorage } from '../utils/';
 
 let persistedData = getStorage(environment.storageCampaignKey);
 
-export const CampaignReducer = produce((state = persistedData || initialState, action) => {
-   let isInitiation = false;
-   switch (action.type) {
-      case ActionTypes.ADD_CAMPAIGN_INTO_LIST:
-         state.campaignsList.push(...action.payload);
-         state.filters = {};
-         break;
-      case ActionTypes.ADD_USERS:
-         state.users.push(...action.payload);
-         break;
-      case ActionTypes.SET_FILTERS:
-         state.filters = { ...state.filters, ...action.payload };
-         break;
-      case ActionTypes.ADD_CAMPAIGN_SAVE_CHANGES:
-         state.addCampaign = { ...state.addCampaign, ...action.payload };
-         break;
-      default:
-         isInitiation = true;
-         setStorage(environment.storageCampaignKey, state);
-         return state;
-   }
-   if (!isInitiation)
-      setStorage(environment.storageCampaignKey, state);
-});
+export const CampaignReducer = (state = persistedData || initialState, action) => {
+   return produce(state, (draft) => {
+      let isInitiation = false;
+      switch (action.type) {
+         case ActionTypes.ADD_CAMPAIGN_INTO_LIST:
+            draft.campaignsList.push(...action.payload);
+            draft.filters = {};
+            break;
+         case ActionTypes.ADD_USERS:
+            draft.users.push(...action.payload);
+            break;
+         case ActionTypes.SET_FILTERS:
+            draft.filters = { ...state.filters, ...action.payload };
+            break;
+         case ActionTypes.ADD_CAMPAIGN_SAVE_CHANGES:
+            draft.addCampaign = { ...state.addCampaign, ...action.payload };
+            break;
+         default:
+            isInitiation = true;
+            return draft;
+      }
+      if (!isInitiation)
+         setStorage(environment.storageCampaignKey, draft);
+   })
+};

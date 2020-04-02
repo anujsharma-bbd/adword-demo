@@ -6,20 +6,21 @@ import { getStorage, setStorage } from '../utils/';
 
 let persistedData = getStorage(environment.storageSharedKey);
 
-export const SharedReducer = produce((state = persistedData || SharedState, action) => {
-   let isInitiation = false;
-   switch (action.type) {
-      case SharedActionTypes.SHOW_LOADER:
-         state.isLoaderShown = true;
-         break;
-      case SharedActionTypes.HIDE_LOADER:
-         state.isLoaderShown = false;
-         break;
-      default:
-         isInitiation = true;
-         setStorage(environment.storageSharedKey, state);
-         return state;
-   }
-   if (!isInitiation)
-      setStorage(environment.storageSharedKey, state);
-})
+export const SharedReducer = (state = persistedData || SharedState, action) => {
+   return produce(state, draft => {
+      let isInitiation = false;
+      switch (action.type) {
+         case SharedActionTypes.SHOW_LOADER:
+            draft.isLoaderShown = true;
+            break;
+         case SharedActionTypes.HIDE_LOADER:
+            draft.isLoaderShown = false;
+            break;
+         default:
+            isInitiation = true;
+            return draft;
+      }
+      if (!isInitiation)
+         setStorage(environment.storageSharedKey, draft);
+   });
+};
