@@ -1,6 +1,8 @@
 # adFrom demo
 
-[ShareOnWA](whatsapp://send?text=anuj)
+
+[Share](whatsapp://send?text=anuj/)
+
 [Demo](https://anujsharma-bbd.github.io/adword-demo/)
 
 <br/>
