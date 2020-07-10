@@ -1,5 +1,5 @@
 # adFrom demo
-<a href="whatsapp://send?text=Hello%20World!">Hello, world!</a>
+<a href="whatsapp://send?text=anuj">Hello, world!</a>
 [Demo](https://anujsharma-bbd.github.io/adword-demo/)
 
 <br/>
