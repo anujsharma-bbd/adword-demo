@@ -1,5 +1,6 @@
 # adFrom demo
-<a href="whatsapp://send?text=anuj">Hello, world!</a>
+
+[ShareOnWA](whatsapp://send?text=anuj)
 [Demo](https://anujsharma-bbd.github.io/adword-demo/)
 
 <br/>
