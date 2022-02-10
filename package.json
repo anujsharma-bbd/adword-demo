@@ -53,7 +53,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "gh-pages": "^2.2.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react-environments": "^1.2.1",
     "react-scripts": "3.4.0",
     "redux-mock-store": "^1.5.4"
